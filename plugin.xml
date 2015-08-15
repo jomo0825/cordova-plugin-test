@@ -10,8 +10,17 @@
   <keywords>cordova plugin</keywords>
   <license>NA</license>
 
-  <js-module src="www/bluetoothle.js" name="BluetoothLe">
-    <clobbers target="window.bluetoothle" />
+  <js-module src="www/calendar.js" name="Calendar">
+    <clobbers target="window.calendar" />
   </js-module>
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="calendarPlugin">
+        <param name="android-package" value="com.memoryabc.cordovapluginhello" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/CalendarPlugin.java" target-dir="src/com//memoryabc" />
+  </platform>
   
 </plugin>
