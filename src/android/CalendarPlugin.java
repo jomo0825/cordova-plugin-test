@@ -1,6 +1,9 @@
-package com.memoryabc.cordovapluginhello;
+package com.memoryabc.plugin.calendar;
 
 import android.content.Intent;
+
+//not org.apache.cordova.api.CallbackContext;
+//not org.apache.cordova.api.CordovaPlugin;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -15,14 +18,15 @@ public class CalendarPlugin extends CordovaPlugin {
     public static final String ACTION_ADD_CALENDAR_ENTRY = "addCalendarEntry";
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContent callbackContent) throws JSONException{
+	// add 2 final
+    public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException{
         try {
             if (ACTION_ADD_CALENDAR_ENTRY.equals(action)) {
                 JSONObject arg_object = args.getJSONObject(0);
                 Intent calIntent = new Intent(Intent.ACTION_EDIT)
                         .setType("vnd.android.cursor.item/event")
                         .putExtra("beginTime", arg_object.getLong("startTimeMills"))
-                        .putExtra("endTime", arg_object.getLong("endTimeMillis"))
+                        .putExtra("endTime", arg_object.getLong("endTimeMills"))
                         .putExtra("title", arg_object.getString("title"))
                         .putExtra("description", arg_object.getString("description"))
                         .putExtra("eventLocation", arg_object.getString("eventLocation"));
