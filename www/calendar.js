@@ -6,7 +6,7 @@ var calendarPlugin = {
       'CalendarPlugin',
       'addCalendarEntry',
       [{
-        "title": title;
+        "title": title,
         "description": notes,
         "eventLocation": location,
         "startTimeMills": startDate.getTime(),
