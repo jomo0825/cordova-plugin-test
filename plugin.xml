@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" id="com.randdusing.bluetoothle" version="2.1.0">
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+
+  <name>Calendar plugin</name>
+  <description>Calendar plugin example</description>
+  <author>jomo</author>
+  <keywords>cordova plugin</keywords>
+  <license>NA</license>
+
+  <js-module src="www/bluetoothle.js" name="BluetoothLe">
+    <clobbers target="window.bluetoothle" />
+  </js-module>
+  
+</plugin>
