@@ -15,3 +15,4 @@ var calendarPlugin = {
     );
   }
 }
+module.exports = calendarPlugin;
